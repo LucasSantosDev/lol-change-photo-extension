@@ -1,0 +1,30 @@
+{
+  "name": "chrome-extension",
+  "manifest_version": 2,
+  "description": "Elias Milos",
+  "version": "1.0",
+  "permissions": [
+    "unlimited_storage",
+    "notifications",
+    "contextMenus",
+    "cookies",
+    "storage",
+    "idle",
+    "tabs",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "js": [
+      "index.js"
+    ],
+    "run_at": "document_end",
+    "persistent": false
+  }]
+}
